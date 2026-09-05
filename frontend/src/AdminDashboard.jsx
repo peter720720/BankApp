@@ -191,8 +191,9 @@ const AdminDashboard = ({ onLogout }) => {
                 .admin-action-small { padding: 8px 12px; font-size: 0.85rem; }
 
                 @media (max-width: 820px) {
-                  .admin-dashboard-root { padding: 20px; }
-                  .admin-dashboard-panel { padding: 15px; }
+                                      .admin-dashboard-root { padding: 0 0 20px !important; }
+                                    .admin-dashboard-panel, .admin-dashboard-section { width: 100%; box-sizing: border-box; }
+                                    .admin-dashboard-panel { padding: 15px; }
                   .admin-dashboard-panel .responsive-input { flex: 1 1 100%; min-width: 0; }
                   .admin-action-row { justify-content: flex-start; }
                   .admin-table-wrapper table { min-width: 700px; }
@@ -263,7 +264,7 @@ const AdminDashboard = ({ onLogout }) => {
                 </table>
             </div>
 
-            <div style={{ padding: '20px', backgroundColor: '#111827', borderRadius: '8px', marginBottom: '50px' }}>
+            <div className="admin-dashboard-section" style={{ padding: '20px', backgroundColor: '#111827', borderRadius: '8px', marginBottom: '50px' }}>
                 <h3 style={{ marginTop: 0, marginBottom: '20px' }}>Create Transaction</h3>
                 <form onSubmit={handleTransaction} className="admin-dashboard-form" style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
                     <select className="responsive-input" style={inputStyle} value={transaction.userId} onChange={e => setTransaction({ ...transaction, userId: e.target.value })} required>
@@ -300,7 +301,7 @@ const AdminDashboard = ({ onLogout }) => {
                 </form>
             </div>
 
-            <div style={{ padding: '20px', backgroundColor: '#111827', borderRadius: '8px' }}>
+            <div className="admin-dashboard-section" style={{ padding: '20px', backgroundColor: '#111827', borderRadius: '8px' }}>
                 <h3 style={{ marginTop: 0, marginBottom: '20px' }}>Transaction History</h3>
                 <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap', marginBottom: '20px' }}>
                     <input
