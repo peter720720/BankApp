@@ -192,6 +192,9 @@ const AdminDashboard = ({ onLogout }) => {
 
                 @media (max-width: 820px) {
                                       .admin-dashboard-root { padding: 0 0 20px !important; }
+                                    .admin-dashboard-header { padding: 12px 15px; }
+                                    .admin-dashboard-header h2 { font-size: 18px; }
+                                    .admin-dashboard-header button { padding: 7px 11px !important; font-size: 11px !important; }
                                     .admin-dashboard-panel, .admin-dashboard-section { width: 100%; box-sizing: border-box; }
                                     .admin-dashboard-panel { padding: 15px; }
                   .admin-dashboard-panel .responsive-input { flex: 1 1 100%; min-width: 0; }
@@ -206,7 +209,7 @@ const AdminDashboard = ({ onLogout }) => {
                 </div>
             )}
 
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
+            <div className="admin-dashboard-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
                 <h2 style={{ color: '#6366f1', margin: 0 }}>Admin Panel</h2>
                 {/* FIXED: Changed to run the prop execution function directly */}
                 <button type="button" onClick={onLogout} style={logoutBtnStyle}>Logout</button>
