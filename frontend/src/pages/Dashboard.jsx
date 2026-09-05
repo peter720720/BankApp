@@ -193,10 +193,6 @@ const MyBankDashboard = ({ onLogout, user }) => {
                 <strong style={{ color: balance < 0 ? '#fca5a5' : undefined }}>{visibleBalance}</strong>
               </div>
 
-              <button className="btn btn-secondary" onClick={() => setShowBalance((prev) => !prev)}>
-                {showBalance ? 'Hide' : 'Show'} Balance
-              </button>
-
               {/* Dropdown triggered via Symbol Button click */}
               <div className="settings-dropdown-wrapper">
                 <button
@@ -232,7 +228,18 @@ const MyBankDashboard = ({ onLogout, user }) => {
                 <div className="card" style={{ animationDelay: '0.05s' }}>
                   <div className="card-header">
                     <div>
-                      <div className="card-title">Card Balance</div>
+                      <div className="card-title balance-title">
+                        <span>Card Balance</span>
+                        <button
+                          className="balance-visibility-toggle"
+                          type="button"
+                          aria-label={showBalance ? 'Hide balance' : 'Show balance'}
+                          title={showBalance ? 'Hide balance' : 'Show balance'}
+                          onClick={() => setShowBalance((prev) => !prev)}
+                        >
+                          <span className={`balance-eye ${showBalance ? '' : 'is-hidden'}`} aria-hidden="true" />
+                        </button>
+                      </div>
                       <div className="card-value" style={{ color: balance < 0 ? '#fca5a5' : undefined }}>{showBalance ? `$${formattedBalance}` : '****'}</div>
                     </div>
                     <div className="chip">
